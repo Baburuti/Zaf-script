@@ -525,7 +525,7 @@ module.exports = function archer(mod) {
     let powerfulradiant = false;
     let kickspeed =1;
     let talentState = [];
-    mod.hook('S_LOAD_EP_INFO', 3, (event) => {
+    mod.hook('S_LOAD_EP_INFO', 4, (event) => {
         if (!enabled) { return };
         talentState = [];
         event.perks.forEach(function (element) {
@@ -1290,7 +1290,7 @@ module.exports = function archer(mod) {
         }
     });
 
-    mod.hook('S_ABNORMALITY_BEGIN', 5, (event) => {
+    mod.hook('S_ABNORMALITY_BEGIN', 4, (event) => {
         if (!enabled) return;
         if (event.target !== cid) {
             return;
@@ -2449,7 +2449,7 @@ disabSkill[(S_ARROWRAIN +50)] = false;
         return true;
     });
 
-	mod.hook('S_PLAYER_STAT_UPDATE', 17, (event) => {
+	mod.hook('S_PLAYER_STAT_UPDATE', 14, (event) => {
         if (!enabled) return;
         aspd = (event.attackSpeedBonus + event.attackSpeed) / event.attackSpeed;
     });
